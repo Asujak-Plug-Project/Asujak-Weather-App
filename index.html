@@ -3,29 +3,59 @@
 <head>
 
 <meta charset="UTF-8">
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Asujak Weather</title>
 
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link
-rel="stylesheet"
-href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="background"></div>
+<!-- Animated Background -->
+<div class="background">
+
+    <!-- Floating Glow -->
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
+
+    <!-- Floating Glass Circles -->
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+
+    <!-- Clouds -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <!-- Flying Birds -->
+    <div class="birds">
+        <span class="bird bird1">🕊️</span>
+        <span class="bird bird2">🕊️</span>
+        <span class="bird bird3">🕊️</span>
+    </div>
+
+    <!-- Stars -->
+    <div class="stars"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles"></div>
+
+    <!-- Weather Effects -->
+    <div class="weather-effects"></div>
+
+</div>
 
 <div class="container">
 
 <div class="card">
+
+<!-- Animated Shine -->
+<div class="card-shine"></div>
 
 <div class="brand">
 
@@ -35,13 +65,32 @@ href="style.css">
 
 </div>
 
+<!-- Greeting -->
+
+<div class="greeting">
+
+Good Morning 👋
+
+</div>
+
+<!-- Search -->
+
 <div class="search">
 
 <input
 type="text"
 placeholder="Search city...">
 
-<button id="searchBtn">
+<button
+class="location-btn"
+title="Current Location">
+
+📍
+
+</button>
+
+<button
+id="searchBtn">
 
 <img
 src="images/search.png"
@@ -51,7 +100,11 @@ alt="search">
 
 </div>
 
+<!-- Loader -->
+
 <div class="loader"></div>
+
+<!-- Error -->
 
 <div class="error">
 
@@ -59,31 +112,55 @@ alt="search">
 
 </div>
 
+<!-- Weather -->
+
 <div class="weather">
 
 <div class="top">
 
 <img
 class="weather-icon"
-src="images/clear.png">
+src="images/clear.png"
+alt="Weather">
 
 <div>
 
-<h1 class="temp">28°C</h1>
+<h1 class="temp">
+
+28°C
+
+</h1>
 
 <h2 class="city">
+
 Port Harcourt
+
 </h2>
 
 <p class="description">
+
 Sunny
+
+</p>
+
+<p class="feels-text">
+
+Feels like
+<span class="feels">30°C</span>
+
 </p>
 
 </div>
 
 </div>
 
-<div class="dateTime"></div>
+<div class="dateTime">
+
+Thursday • 23 July • 10:35 AM
+
+</div>
+
+<!-- Highlights -->
 
 <div class="weather-grid">
 
@@ -103,7 +180,7 @@ Sunny
 
 <h3 class="wind">14 km/h</h3>
 
-<p>Wind</p>
+<p>Wind Speed</p>
 
 </div>
 
@@ -131,7 +208,7 @@ Sunny
 
 <span>📈</span>
 
-<h3 class="pressure">1014</h3>
+<h3 class="pressure">1014 hPa</h3>
 
 <p>Pressure</p>
 
@@ -147,9 +224,76 @@ Sunny
 
 </div>
 
+<div class="weather-box">
+
+<span>🌅</span>
+
+<h3 class="sunrise">6:18 AM</h3>
+
+<p>Sunrise</p>
+
+</div>
+
+<div class="weather-box">
+
+<span>🌇</span>
+
+<h3 class="sunset">6:45 PM</h3>
+
+<p>Sunset</p>
+
 </div>
 
 </div>
+
+<!-- Hourly Forecast -->
+
+<div class="forecast-title">
+
+Hourly Forecast
+
+</div>
+
+<div class="hourly-forecast">
+
+<!-- JavaScript Generates Cards -->
+
+</div>
+
+<!-- 5 Day Forecast -->
+
+<div class="forecast-title">
+
+5-Day Forecast
+
+</div>
+
+<div class="forecast-list">
+
+<!-- JavaScript Generates Forecast -->
+
+</div>
+
+</div>
+
+<footer>
+
+<img
+src="images/logo.png"
+class="footer-logo"
+alt="Logo">
+
+<p>
+
+Asujak Weather v1.0
+
+<br>
+
+Powered by <strong>NTC Tech Concept</strong>
+
+</p>
+
+</footer>
 
 </div>
 
