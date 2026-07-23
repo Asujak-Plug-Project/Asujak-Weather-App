@@ -1,124 +1,162 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Asujak Weather</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="style.css">
+
 </head>
 
 <body>
 
+<div class="background"></div>
+
+<div class="container">
+
 <div class="card">
 
-    <div class="search">
-        <input type="text" placeholder="Enter city name" spellcheck="false">
-        <button>
-            <img src="search.png" alt="Search">
-        </button>
-    </div>
+<div class="brand">
 
-    <div class="error">
-        <p>Invalid city name</p>
-    </div>
+<h2>☀️ Asujak Weather</h2>
 
-    <div class="weather">
-        <img src="rain.png" class="weather-icon" alt="Weather icon">
-
-        <h1 class="temp">22°C</h1>
-
-        <h2 class="city">New York</h2>
-
-        <div class="details">
-
-            <div class="col">
-                <img src="humidity.png" alt="Humidity">
-                <div>
-                    <p class="humidity">50%</p>
-                    <p>Humidity</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <img src="wind.png" alt="Wind">
-                <div>
-                    <p class="wind">15 km/h</p>
-                    <p>Wind Speed</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
+<p>Powered by NTC Tech Concept</p>
 
 </div>
 
-<script>
+<div class="search">
 
-    const apikey = "25c095a09ddab41edb07e652b4ffb730";
+<input
+type="text"
+placeholder="Search city...">
 
-    const apiurl =
-        "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+<button id="searchBtn">
 
-    const searchBox = document.querySelector(".search input");
-    const searchBtn = document.querySelector(".search button");
-    const weatherIcon = document.querySelector(".weather-icon");
+<img
+src="images/search.png"
+alt="search">
 
-    async function checkweather(city) {
+</button>
 
-        const response = await fetch(
-            apiurl + city + `&appid=${apikey}`
-        );
+</div>
 
-        if (!response.ok) {
+<div class="loader"></div>
 
-            document.querySelector(".error").style.display = "block";
-            document.querySelector(".weather").style.display = "none";
+<div class="error">
 
-        } else {
+<p>City not found.</p>
 
-            const data = await response.json();
+</div>
 
-            document.querySelector(".city").innerHTML = data.name;
+<div class="weather">
 
-            document.querySelector(".temp").innerHTML =
-                Math.round(data.main.temp) + "°C";
+<div class="top">
 
-            document.querySelector(".humidity").innerHTML =
-                data.main.humidity + "%";
+<img
+class="weather-icon"
+src="images/clear.png">
 
-            document.querySelector(".wind").innerHTML =
-                data.wind.speed + " km/h";
+<div>
 
+<h1 class="temp">28°C</h1>
 
-            if (data.weather[0].main === "Clouds") {
-                weatherIcon.src = "clouds.png";
+<h2 class="city">
+Port Harcourt
+</h2>
 
-            } else if (data.weather[0].main === "Clear") {
-                weatherIcon.src = "clear.png";
+<p class="description">
+Sunny
+</p>
 
-            } else if (data.weather[0].main === "Rain") {
-                weatherIcon.src = "rain.png";
+</div>
 
-            } else if (data.weather[0].main === "Drizzle") {
-                weatherIcon.src = "drizzle.png";
+</div>
 
-            } else if (data.weather[0].main === "Mist") {
-                weatherIcon.src = "mist.png";
-            }
+<div class="dateTime"></div>
 
+<div class="weather-grid">
 
-            document.querySelector(".weather").style.display = "block";
-            document.querySelector(".error").style.display = "none";
-        }
-    }
+<div class="weather-box">
 
+<span>💧</span>
 
-    searchBtn.addEventListener("click", () => {
-        checkweather(searchBox.value);
-    });
+<h3 class="humidity">75%</h3>
 
-</script>
+<p>Humidity</p>
+
+</div>
+
+<div class="weather-box">
+
+<span>🌬️</span>
+
+<h3 class="wind">14 km/h</h3>
+
+<p>Wind</p>
+
+</div>
+
+<div class="weather-box">
+
+<span>🌡️</span>
+
+<h3 class="feels">30°C</h3>
+
+<p>Feels Like</p>
+
+</div>
+
+<div class="weather-box">
+
+<span>👁️</span>
+
+<h3 class="visibility">8 km</h3>
+
+<p>Visibility</p>
+
+</div>
+
+<div class="weather-box">
+
+<span>📈</span>
+
+<h3 class="pressure">1014</h3>
+
+<p>Pressure</p>
+
+</div>
+
+<div class="weather-box">
+
+<span>🌍</span>
+
+<h3 class="country">NG</h3>
+
+<p>Country</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
